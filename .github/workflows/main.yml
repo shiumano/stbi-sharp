@@ -91,15 +91,6 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Setup JDK
-        uses: actions/setup-java@v4
-        with:
-          distribution: microsoft
-          java-version: 17
-
-      - name: Install Android SDK Manager
-        uses: android-actions/setup-android@v3
-
       - name: Install Android SDK
         run: |
           sdkmanager --install "platforms;android-$PLATFORM_VER"
