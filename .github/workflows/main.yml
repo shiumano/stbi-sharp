@@ -91,6 +91,9 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Install Android SDK Manager
+        uses: android-actions/setup-android@v3
+
       - name: Install Android SDK
         run: |
           sdkmanager --install "platforms;android-$PLATFORM_VER"
