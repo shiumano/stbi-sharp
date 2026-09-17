@@ -102,8 +102,8 @@ jobs:
 
       - name: Install Android SDK
         run: |
-          sdkmanager --install "platforms;android-$NDK_VER"
-          sdkmanager --install "ndk;$PLATFORM_VER"
+          sdkmanager --install "platforms;android-$PLATFORM_VER"
+          sdkmanager --install "ndk;$NDK_VER"
 
       - name: Build
         run: |
