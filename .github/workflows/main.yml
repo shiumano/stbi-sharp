@@ -97,7 +97,9 @@ jobs:
           java-version: 17
 
       - name: Install Android SDK Manager
-        uses: android-actions/setup-android@v4
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'cmdline-tools;latest'
 
       - name: Install Android SDK
         run: |
