@@ -11,7 +11,6 @@ on:
 
 env:
   NDK_VER: 28.2.13676358
-  PLATFORM_VER: 35
 
 permissions:
     contents: read # required by actions/checkout to fetch source
@@ -91,12 +90,17 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Setup JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: microsoft
+          java-version: 17
+
       - name: Install Android SDK Manager
         uses: android-actions/setup-android@v3
 
       - name: Install Android SDK
         run: |
-          sdkmanager --install "platforms;android-$PLATFORM_VER"
           sdkmanager --install "ndk;$NDK_VER"
 
       - name: Build
